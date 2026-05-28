@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Voice Assistant</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <header class="header">
+            <div class="logo">
+                <div class="pulse-ring"></div>
+                <i class="fa-solid fa-microphone-lines"></i>
+            </div>
+            <h1>Aura Voice</h1>
+            <p>Powered by DeepSeek & ElevenLabs</p>
+        </header>
+
+        <main class="chat-container">
+            <div class="chat-box" id="chat-box">
+                <div class="message assistant">
+                    <div class="avatar"><i class="fa-solid fa-robot"></i></div>
+                    <div class="content">Hello! I am your voice assistant. How can I help you today?</div>
+                </div>
+            </div>
+
+            <div class="typing-indicator hidden" id="typing-indicator">
+                <span></span><span></span><span></span>
+            </div>
+
+            <div class="input-area">
+                <button id="mic-btn" class="btn-secondary" title="Hold to speak">
+                    <i class="fa-solid fa-microphone"></i>
+                </button>
+                <textarea id="message-input" placeholder="Type or speak your message..." rows="1"></textarea>
+                <button id="send-btn" class="btn-primary">
+                    <i class="fa-solid fa-paper-plane"></i>
+                </button>
+            </div>
+        </main>
+        
+        <audio id="audio-player" class="hidden" controls></audio>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>
